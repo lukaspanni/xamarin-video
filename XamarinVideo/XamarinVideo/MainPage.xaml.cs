@@ -9,6 +9,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.CommunityToolkit;
 
+
 namespace XamarinVideo
 {
     public partial class MainPage : ContentPage, INotifyPropertyChanged
@@ -75,15 +76,38 @@ namespace XamarinVideo
                 return;
             }
 
-            var newFile = Path.Combine(FileSystem.CacheDirectory, video.FileName);
+            requestPermissionsIfNeeded();
+            string newFilePath = BuildFileName(video);
+            Directory.CreateDirectory(Path.GetDirectoryName(newFilePath));
+
             using (var stream = await video.OpenReadAsync())
-                using (var newStream = File.OpenWrite(newFile))
+            using (var newStream = File.OpenWrite(newFilePath))
                 await stream.CopyToAsync(newStream);
-            
 
-            Console.WriteLine($"Stored Video {newFile}");
 
-            VideoPath = newFile;
+            Console.WriteLine($"Stored Video {newFilePath}");
+
+            VideoPath = newFilePath;
+        }
+
+        private static string BuildFileName(FileResult video)
+        {
+            return App.filePathBuilder.buildPlatformSpecificFilePath(video.FileName);
+        }
+
+        private async void requestPermissionsIfNeeded()
+        {
+            if (Device.RuntimePlatform != Device.Android)
+                return;
+
+            if((await Permissions.CheckStatusAsync<Permissions.StorageRead>()) != PermissionStatus.Granted)
+            {
+                await Permissions.RequestAsync<Permissions.StorageRead>();
+            }
+            if ((await Permissions.CheckStatusAsync<Permissions.StorageWrite>()) != PermissionStatus.Granted)
+            {
+                await Permissions.RequestAsync<Permissions.StorageWrite>();
+            }
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

@@ -13,7 +13,7 @@
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="Button_Clicked" />
-        <xct:MediaElement x:Name="mediaElement" BindingContext="{x:Reference Page}" Source="{Binding VideoPath}" AutoPlay="False" HeightRequest="400" WidthRequest="800" ShowsPlaybackControls="True" Aspect="AspectFill"/>
+        <xct:MediaElement x:Name="mediaElement" BindingContext="{x:Reference Page}" Source="{Binding VideoPath}" AutoPlay="False" HeightRequest="400" WidthRequest="800" ShowsPlaybackControls="True" Aspect="AspectFill" Margin="0,0,0,10"/>
     </StackLayout>
 
 </ContentPage>

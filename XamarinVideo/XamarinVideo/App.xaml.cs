@@ -9,6 +9,13 @@ namespace XamarinVideo
 {
     public partial class App : Application
     {
+        public static IPlatformFilePathBuilder filePathBuilder { get; private set; }
+
+        public static void Init(IPlatformFilePathBuilder platformFilePathBuilder)
+        {
+            App.filePathBuilder = platformFilePathBuilder;
+        }
+        
         public App()
         {
             InitializeComponent();
