@@ -44,5 +44,8 @@
         <string>This app needs access to photos gallery for picking photos and videos.</string>
         <key>UIFileSharingEnabled</key>
         <true />
+        <key>LSSupportsOpeningDocumentsInPlace</key>
+        <true />
+
     </dict>
 </plist>
