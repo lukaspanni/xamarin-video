@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android.Widget;
 
 namespace XamarinVideo.Droid
 {
@@ -18,7 +19,8 @@ namespace XamarinVideo.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             App.Init(new AndroidFilePathBuilder());
             LoadApplication(new App());
-            
+            ReportFullyDrawn();
+            Toast.MakeText(this, DateTime.Now.ToString("O"), ToastLength.Long).Show(); 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

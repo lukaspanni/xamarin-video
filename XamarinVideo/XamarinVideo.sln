@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinVideo.Android", "Xam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinVideo.iOS", "XamarinVideo.iOS\XamarinVideo.iOS.csproj", "{B1EEE244-14FF-47ED-A68B-E0BCE01A1434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinVideo", "XamarinVideo\XamarinVideo.csproj", "{826B772B-DC51-4673-B1BE-EAAE5C5E0E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinVideo", "XamarinVideo\XamarinVideo.csproj", "{826B772B-DC51-4673-B1BE-EAAE5C5E0E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
