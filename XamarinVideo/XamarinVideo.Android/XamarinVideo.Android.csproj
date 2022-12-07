@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -112,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinVideo\XamarinVideo.csproj">
-      <Project>{8A1ED58D-6536-4246-8C37-C3E95102C524}</Project>
+      <Project>{826B772B-DC51-4673-B1BE-EAAE5C5E0E7C}</Project>
       <Name>XamarinVideo</Name>
     </ProjectReference>
   </ItemGroup>
